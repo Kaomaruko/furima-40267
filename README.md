@@ -31,7 +31,6 @@
 | seller_user_id     | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | prefecture_id      | integer    | null: false                    |
-| image              | string     | null: false                    |
 
 ### Association
 
@@ -42,8 +41,8 @@
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
-| buyer_user_id | integer    | null: false, foreign_key: true |
-| item_id       | integer    | null: false, foreign_key: true |
+| buyer_user_id | references | null: false, foreign_key: true |
+| item_id       | references | null: false, foreign_key: true |
 
 
 ### Association
@@ -54,15 +53,15 @@
 
 ## destinations テーブル
 
-| Column             | Type    | Options                         |
-| ------------------ | ------  | -----------                     |
-| zip_code           | string  | null: false                     |
-| prefecture_id      | integer | null: false                     |
-| city               | string  | null: false                     |
-| address            | string  | null: false                     |
-| building_name      | string  |                                 |
-| order_history      | integer | null: false, foreign_key: true  |
-| phone_number       | string  | null: false                     |
+| Column             | Type       | Options                         |
+| ------------------ | ------     | -----------                     |
+| zip_code           | string     | null: false                     |
+| prefecture_id      | integer    | null: false                     |
+| city               | string     | null: false                     |
+| address            | string     | null: false                     |
+| building_name      | string     |                                 |
+| order_history      | references | null: false, foreign_key: true  |
+| phone_number       | string     | null: false                     |
 
 ### Association
 

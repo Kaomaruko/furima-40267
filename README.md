@@ -27,11 +27,11 @@
 | name               | string     | null: false                    |
 | description        | text       | null: false                    |
 | category_id        | integer    | null: false                    |
-| brand_id           | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
-| seller_user_id     | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | prefecture_id      | integer    | null: false                    |
+| delivery_cost_id   | integer    | null: false                    |
+| days_id            | integer    | null: false                    |
 
 ### Association
 

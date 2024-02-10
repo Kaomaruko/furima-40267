@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   
 
   def index
-    @item = Item.includes(:user).order('created_at DESC')
+    #@item = Item.includes(:user).order('created_at DESC')
   end
 
   def show
@@ -34,9 +34,9 @@ end
 
   private
 
-  def set_item
-    @item = Item.find(params[:id])
-  end
+  #def set_item
+    #@item = Item.find(params[:id])
+  #end
 
   def item_params
     params.require(:item).permit(:name, :image, :description, :category_id, :status_id, :delivery_cost_id, :prefecture_id, :days_id, :price ).merge(user_id: current_user.id)

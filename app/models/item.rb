@@ -6,8 +6,10 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :days
   belongs_to :user
+
   has_one_attached :image
-  #has_one :order_history
+  has_one :order_history
+  has_one_attached :image
 
   validates :image, :name, :description, :category_id, :status_id, :delivery_cost_id, :prefecture_id, :days_id, presence: true
   

@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe OrderForm, type: :model do
   before do
-    @order_form = FactoryBot.build(:order_form)
+    @user = FactoryBot.create(:user)
+    @item = FactoryBot.create(:item)
+    @order_form = FactoryBot.build(:order_form, item_id: @item.id, user_id: @user.id)
   end
 
   describe '商品購入' do
@@ -11,6 +13,11 @@ RSpec.describe OrderForm, type: :model do
         expect(@order_form).to be_valid
       end
 
+      it '建物名が空でも購入できる' do
+        @order_form.building_name = nil
+        expect(@order_form).to be_valid
+      end
+     
     
 
     context '商品購入ができないとき' do

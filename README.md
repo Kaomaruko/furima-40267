@@ -38,7 +38,7 @@
 - belongs_to :user
 - has_one :order_history
 
-## order_histories テーブル
+## orders テーブル
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
@@ -52,7 +52,7 @@
 - belongs_to :item
 - has_one :destination
 
-## destinations テーブル
+## addresses テーブル
 
 | Column             | Type       | Options                         |
 | ------------------ | ------     | -----------                     |
@@ -61,7 +61,7 @@
 | city               | string     | null: false                     |
 | address            | string     | null: false                     |
 | building_name      | string     |                                 |
-| order_history      | references | null: false, foreign_key: true  |
+| order              | references | null: false, foreign_key: true  |
 | phone_number       | string     | null: false                     |
 
 ### Association
